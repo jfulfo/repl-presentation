@@ -1,0 +1,17 @@
+\frametitle{Case Study: Abstraction as a Necessity}
+\begin{block}{Definition}
+    A term is \textbf{well-formed} if every variable occurrence refers to a bound variable
+  \end{block}
+  \pause
+  \begin{alertblock}{Problem}
+    How do we include the notion of alpha variance
+    into our well-formedness function?
+  \end{alertblock}
+  \pause
+  \begin{block}{Solution}
+    Define \lstinline|id := nat|. \pause (De Bruijn indeces).
+  \end{block}
+  \pause
+  \begin{lstlisting}[language=Coq]
+Definition wf_var (G : nat) (x : id) : bool := x <? G.
+  \end{lstlisting}
